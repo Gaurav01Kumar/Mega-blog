@@ -1,0 +1,83 @@
+.box1{
+    height: 100vh;
+    width: 17%;
+    background-color: whitesmoke;
+    position: fixed;
+    z-index: 1;
+    
+
+}.box1 h2{
+    text-align: center;
+  margin-top: 20px;
+}
+
+.userprofile{
+    height: 190px;
+    background-color:whitesmoke;
+    text-align:center;
+    margin-top:30px;
+   
+}
+.userprofile h4{
+    margin-top: 10px;
+text-align: center;
+}
+.userimage img{
+    height: 50px;
+    width: 45px;
+    border-radius: 50%;
+    
+}
+.userimage{
+    height: 60px;
+    width: 55px;
+    border: 2px solid indianred;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+    
+}
+
+.userdetails{
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+}
+.details{
+    width: 33%;
+   text-align: center;  
+}
+.navigation{
+    height:100vh;
+   width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease-in;
+}
+.navigation a  :hover{
+    color: indianred;
+}
+.navigation .link{
+    height: 30px;
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.link i{
+    position: absolute;
+    left: 50px;
+}
+.sidedrop{
+    display: none;
+}
+.user-btn-hover:hover + .sidedrop{
+display: inline-block;
+}
