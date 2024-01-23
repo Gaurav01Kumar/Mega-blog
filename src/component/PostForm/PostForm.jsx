@@ -1,10 +1,10 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Input, RTE, Select } from "..";
 import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+import { SwapSpinner } from "react-spinners-kit"
 export default function PostForm({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
@@ -17,11 +17,11 @@ export default function PostForm({ post }) {
 
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
-
+    const [isUploading,setIsUploading]=useState(false)
     const submit = async (data) => {
         
       try {
-        
+        setIsUploading(true)
         if (post) {
             
             const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
@@ -50,7 +50,7 @@ export default function PostForm({ post }) {
                 const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
                 
                 if (dbPost) {
-                    
+                    setIsUploading(false)
                     navigate(`/post/${dbPost.$id}`);
                 }
             }
@@ -82,6 +82,12 @@ export default function PostForm({ post }) {
     }, [watch, slugTransform, setValue]);
 
     return (
+        <>
+        {
+            isUploading? (
+             <SwapSpinner  size={200} />
+            )
+        :(
         <div className="post-card-form">
         <form onSubmit={handleSubmit(submit)} className="
          bg-black opacity-90 shadow rounded
@@ -141,5 +147,7 @@ export default function PostForm({ post }) {
             </div>
         </form>
         </div>
-    );
+      )  }
+      </>
+    )
 }

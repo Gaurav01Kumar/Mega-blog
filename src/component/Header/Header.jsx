@@ -114,7 +114,7 @@ const Header = () => {
                     </li>
                     <li>
                       <Link
-                        to="/profile"
+                        to={`/profile/:2`}
                         className=" flex items-center gap-3
                           mt-5 hover:text-sky-500 text-[19px]"
                       >

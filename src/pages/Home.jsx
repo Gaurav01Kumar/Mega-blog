@@ -11,7 +11,7 @@ const Home = () => {
             }
         })
      }, []);
-   console.log(posts)
+   //console.log(posts)
     if (posts.length === 0) {
         return (
             <div className='w-full py-8 mt-48 text-center'>
@@ -31,7 +31,7 @@ const Home = () => {
     return(
         <div className='w-full py-8 mt-40'>
             <Container>
-                <div className='flex flex-wrap'>
+                <div className='grid grid-cols-4 gap-10 justify-around'>
                     {
                         posts.map((post)=>(
                             <div key={post.$id} className='p-2 w-1/4'>

@@ -78,6 +78,9 @@ text-align: center;
 .sidedrop{
     display: none;
 }
+.sidedrop:hover{
+    display: block;
+}
 .user-btn-hover:hover + .sidedrop{
 display: inline-block;
 }

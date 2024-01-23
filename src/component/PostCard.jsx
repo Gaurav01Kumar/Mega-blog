@@ -26,7 +26,8 @@ const PostCard = ({ $id, title, featuredImage, userId }) => {
        <WaveSpinner size={200} className="mr-60" />
       ) : (
         <Link to={`/post/${$id}`}>
-          <div className="w-full text-left bg-gray-100 rounded-xl p-5">
+          <div className="w-[300px] text-left bg-gray-100
+           rounded-xl p-5 hover:scale-105 hover:bg-transparent hover:border hover:shadow-amber-50">
             <div className="flex items-center gap-5">
               <i
                 className="fa fa-user mt-1 text-2xl border
