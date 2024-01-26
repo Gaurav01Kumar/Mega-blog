@@ -5,6 +5,7 @@ import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { SwapSpinner } from "react-spinners-kit"
+import { category } from "../../constants"
 export default function PostForm({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
@@ -135,12 +136,25 @@ export default function PostForm({ post }) {
                         />
                     </div>
                 )}
+                  <Select
+                    options={["active", "inactive"]}
+                    label="Category"
+                    className="mb-4"
+                    {...register("category")}
+                />
+                  <Select
+                    options={["active", "inactive"]}
+                    label="subcategory"
+                    className="mb-4"
+                    {...register("subcategory")}
+                />
                 <Select
                     options={["active", "inactive"]}
                     label="Status"
                     className="mb-4"
                     {...register("status")}
                 />
+
                 <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
                     {post ? "Update" : "Submit"}
                 </Button>

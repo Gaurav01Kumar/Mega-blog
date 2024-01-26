@@ -51,7 +51,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="py-3 shadow-xl bg-white rounded fixed w-[90%] z-10 left-10">
+    <header className="py-3 shadow-xl bg-white rounded fixed w-[90%] z-10 left-[6%]">
       <Container>
         <nav className="w-full flex justify-around align-center">
           <div className="mr-4">
@@ -109,7 +109,7 @@ const Header = () => {
                         className=" flex items-center gap-3
                           mt-5 text-sky-500 text-[16px]"
                       >
-                        <FiUserPlus /> Hi, {user}
+                        <FiUserPlus /> Hi, {user&&user}
                       </Link>
                     </li>
                     <li>
