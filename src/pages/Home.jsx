@@ -85,7 +85,7 @@ const Home = () => {
           ))}
         </ul>
 
-        <div className="grid grid-cols-4 gap-10 mt-10 justify-around  ">
+        <div className="grid grid-cols-3 gap-10 mt-10 justify-around  ">
           {posts.map((post) => (
             <div key={post.$id} className="p-2 w-1/4">
               <PostCard {...post} />

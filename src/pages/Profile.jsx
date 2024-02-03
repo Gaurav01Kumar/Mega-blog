@@ -1,17 +1,15 @@
-import React from 'react'
+import React from "react";
 
 const Profile = () => {
   return (
-    <section className="gradient-custom-2 w-full h-full mt-[10%]">
-    <div className="">
-        <div>
-            <img src="https://pbs.twimg.com/profile_images/1748662916524494848/EKQEG18P_400x400.jpg" 
-            alt="" className='h-[200px]' />
+    <section className="bg-white shadow w-[94%] mx-[4%] h-full mt-[10%]">
+      <div className="">
+        <div className="">
+          dd
         </div>
-    </div>
-    sjs
-  </section>
-  )
-}
+      </div>
+    </section>
+  );
+};
 
-export default Profile
+export default Profile;
